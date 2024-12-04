@@ -1,0 +1,32 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: .
+    env_file: .env
+    ports:
+      - "${NEXTJS_BIND_PORT}:${NEXTJS_BIND_PORT}"
+  unit-test:
+    image: node:12.14.0-alpine
+    env_file: .env
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: >
+      sh -c "npm ci && npm run unit-test"
+  int-test:
+    image: node:12.14.0-alpine
+    env_file: .env
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: >
+      sh -c "npm ci && npm run int-test"
+  all-test:
+    image: node:12.14.0-alpine
+    env_file: .env
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: >
+      sh -c "npm ci && npm run test"

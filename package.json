@@ -1,0 +1,66 @@
+{
+  "name": "nextjs-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "standard": "standard -v 'src/**/*.js' 'src/**/*.jsx' '__tests__/**/*.js' '__tests__/**/*.jsx'",
+    "test": "jest ./__tests__ --testPathIgnorePatterns support/*",
+    "unit-test": "jest ./__tests__/unit",
+    "int-test": "jest ./__tests__/integration",
+    "dev": "next ./src",
+    "build": "next build ./src",
+    "start": "next start ./src -p $NEXTJS_BIND_PORT",
+    "mockserver": "MOCK_HEADERS=Authorization mockserver -p 9000 -m '__tests__/support/mocks'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willianantunes/nextjs-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willianantunes/nextjs-playground/issues"
+  },
+  "homepage": "https://github.com/willianantunes/nextjs-playground#readme",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "bootstrap-css-only": "^4.3.1",
+    "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "jsdom": "^15.2.1",
+    "logplease": "^1.2.15",
+    "next": "^9.1.6",
+    "next-redux-wrapper": "^4.0.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-markdown": "^4.2.2",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "url-polyfill": "^1.1.7"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "enzyme": "^3.11.0",
+    "fake-indexeddb": "^3.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "mockserver": "^3.1.1",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
+    "redux-mock-store": "^1.5.4",
+    "standard": "*",
+    "test-listen": "^1.1.0"
+  },
+  "standard": {
+    "envs": [
+      "jest",
+      "browser",
+      "node"
+    ]
+  }
+}
