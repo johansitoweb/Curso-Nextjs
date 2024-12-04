@@ -1,2 +1,2 @@
 # Curso-Nextjs
-segunda y ultima parte de mi cuso de nextjs
+segunda y ultima parte de mi cuso de nextjs.
